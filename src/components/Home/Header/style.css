@@ -1,0 +1,23 @@
+.home-header {
+  text-align: center;
+}
+
+.home-header h2 {
+  color: #0080ff;
+  font-size: 2rem;
+}
+
+.home-header h1 {
+  color: #0f52ba;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home-header h1 > span {
+  color: #b0c4de;
+}
+
+#para {
+  color: #a9a9a9;
+  font-weight: 500;
+}

@@ -1,0 +1,135 @@
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.auth-form-container,
+.row {
+  display: flex;
+  flex-direction: column;
+  /* padding: 5rem; */
+}
+
+@media (min-width: 600px) {
+  .auth-form-container {
+    padding: 3rem 5rem;
+    border: 1px solid black;
+    /* box-shadow: 0px 0px 10px 3px black; */
+
+    margin: 0 0 0 5rem;
+  }
+}
+
+.auth-form-container form {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+.auth-form-container input {
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  width: 265px;
+  border-radius: 5px;
+  border: solid 1px #a9a9a9;
+}
+
+.btn-sign-in {
+  background: #c43421;
+  color: #181818;
+  font-weight: 600;
+  font-size: medium;
+  padding: 10px 27px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: fit-content;
+  margin-left: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-sign-up {
+  background: #4287f5;
+  color: #181818;
+  font-weight: 600;
+  font-size: medium;
+  padding: 10px 27px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: fit-content;
+  margin-left: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-btn {
+  /* padding: 20px; */
+  background: none;
+  /* width: fit-content; */
+  /* color: iwhite; */
+  font-size: small;
+  text-decoration: underline;
+}
+
+.firstName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.lastName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.para-btn {
+  margin-top: 4px;
+}
+
+.gmail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.passw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.user-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* margin-bottom: 4px; */
+  margin: 0 auto 20px auto;
+}
+
+/* createBlogsStyle */
+
+.blogs {
+  width: 100vw;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.description-box {
+  height: 150px;
+  padding-top: 20px;
+  resize: none;
+  letter-spacing: 1px;
+}
+

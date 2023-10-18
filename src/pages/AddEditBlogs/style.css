@@ -1,0 +1,73 @@
+.homeBlogs {
+  background: rgb(235, 171, 106);
+  height: 100vh;
+}
+
+.blogs {
+  padding: 20px;
+}
+
+.createTitle {
+  text-align: center;
+}
+
+.form-control {
+  padding: 8px 16px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.reactTagInput {
+  border-radius: 6px;
+}
+
+.trending {
+  margin-top: 10px;
+}
+
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  /* justify-content: space-between; */
+}
+
+.trending-yes {
+  margin-right: 9vw; /* Add some spacing between label and radio input */
+}
+
+.trending-no {
+  margin-right: 137px;
+}
+
+.cate-dropdown {
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.description-box {
+  margin: 10px 0;
+  padding: 10px;
+  border: solid 1px #0000003e;
+  font-family: "Roboto", sans-serif;
+  width: 50vw;
+  border-radius: 6px;
+  resize: none;
+}
+
+.submit-button {
+  width: fit-content;
+
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: #009dff;
+  border: solid 1px #009dff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0086d8;
+}

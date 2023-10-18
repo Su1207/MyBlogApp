@@ -1,0 +1,162 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background: #0080ff;
+  color: white;
+  height: 70px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0px 10px 40px -20px blue;
+}
+
+.navbar nav ul {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.item {
+  text-decoration: none;
+  margin: 20px;
+  color: antiquewhite;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  /* top: 8px; */
+  transition: 0.3s all;
+}
+
+.item:hover {
+  color: #181818;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #181818;
+  transition: width 0.3s;
+}
+
+.item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* .item::after {
+  content: "";
+  display: flex;
+  height: 2px;
+  width: 100%;
+  background-color: #181818;
+  transform: scaleX(0);
+  transition: 0.3s ease-in-out;
+}
+
+.item:hover:after {
+  transform: scaleX(1);
+} */
+
+.logout {
+  display: flex;
+  align-items: center;
+}
+
+.profile-logo {
+  color: #181818;
+  margin-top: 5px;
+}
+
+.uname {
+  margin-left: 5px;
+  color: antiquewhite;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.uname:hover {
+  color: #181818;
+}
+
+.MobileNav {
+  display: none;
+}
+
+@media (max-width: 662px) {
+  .Nav {
+    display: none;
+  }
+  .MobileNav {
+    display: flex;
+    align-items: center;
+  }
+  .MobileNav .hamburger-menu {
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+  }
+  .navbar nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #181818;
+  }
+  .item:hover {
+    color: #0080ff;
+  }
+  .navbar nav ul li {
+    padding: 15px;
+    margin-top: 25px;
+  }
+  .navbar {
+    opacity: 1;
+  }
+}
+
+.navbar__title {
+  margin-right: auto;
+  margin-left: 40px;
+  cursor: pointer;
+  transition: transform 0.5s 0.3s ease-in-out;
+  color: #e4e446;
+  font-size: large;
+  animation: bg 2s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  transition: 0.3s all;
+}
+
+.spann {
+  color: #fbbc05;
+}
+
+@keyframes bg {
+  0% {
+    color: plum;
+  }
+  50% {
+    color: peru;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+.navbar__title:hover {
+  transform: scale(1.2);
+}
+
+/* h3 {
+  height: 10px;
+  margin-top: 10px;
+  margin-bottom: 70px;
+} */

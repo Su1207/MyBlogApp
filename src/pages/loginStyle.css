@@ -1,39 +1,61 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  margin-bottom: 1rem;
+  /* max-height: 100vh; */
+}
+
+.auth__img {
+  width: 550px;
+  height: 600px;
 }
 
 .auth-form-container,
 .row {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  font-size: 0.875rem;
   /* padding: 5rem; */
 }
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   .auth-form-container {
     padding: 3rem 5rem;
     border: 1px solid black;
-    /* box-shadow: 0px 0px 10px 3px black; */
+    box-shadow: 0px 0px 2px 0px black;
 
-    margin: 0 0 0 5rem;
+    margin: 0 0 0 2rem;
   }
+} */
+
+.auth-form-container {
+  background-color: hsl(0, 0%, 94%);
+  width: 25rem;
+  height: max-content;
+  /* box-shadow: 0 0 0 9px rgb(255 255 255/30%); */
+  padding: 3rem 3rem;
+  border: 1px solid black;
+  box-shadow: 0px 0px 2px 0px black;
+  margin: 0 0 0 2rem;
 }
 
 .auth-form-container form {
-  text-align: left;
-  padding: 0.25rem 0;
+  /* text-align: left; */
+  /* padding: 0.25rem 0; */
+  margin-top: 0.5rem;
+  width: max-content;
 }
 
 .auth-form-container input {
   margin: 0.5rem 0;
-  padding: 0.7rem;
-  width: 265px;
+  padding: 0.5rem;
+  width: 15rem;
   border-radius: 5px;
   border: solid 1px #a9a9a9;
+  font-size: 0.8rem;
 }
 
 .btn-sign-in {
@@ -45,10 +67,10 @@
   border-radius: 5px;
   margin-top: 10px;
   width: fit-content;
-  margin-left: 106px;
-  display: flex;
+  /* margin-left: 106px; */
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .btn-sign-up {
@@ -60,10 +82,10 @@
   border-radius: 5px;
   margin-top: 10px;
   width: fit-content;
-  margin-left: 106px;
+  /* margin-left: 106px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .link-btn {
@@ -77,52 +99,54 @@
 
 .firstName {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   column-gap: 4px;
 }
 
 .lastName {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   column-gap: 4px;
 }
 
 .para-btn {
-  margin-top: 4px;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
 }
 
 .gmail {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   column-gap: 4px;
 }
 
 .passw {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   column-gap: 4px;
 }
 
 .user-img {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   text-align: center;
   /* margin-bottom: 4px; */
-  margin: 0 auto 20px auto;
+  margin: 0 auto 0.5rem auto;
+  size: 80px;
 }
 
 /* createBlogsStyle */
 
-.blogs {
+/* .blogs {
   width: 100vw;
   display: flex;
   /* justify-content: center; */
-  flex-direction: column;
+/* flex-direction: column;
   align-items: center;
 }
 
@@ -130,6 +154,103 @@
   height: 150px;
   padding-top: 20px;
   resize: none;
-  letter-spacing: 1px;
+  letter-spacing: 1px; */
+
+@media screen and (max-width: 1024px) {
+  .auth__img {
+    width: 450px;
+    height: 500px;
+  }
+
+  .auth-form-container {
+    width: 20rem;
+    font-size: 0.8rem;
+  }
+
+  .para-btn {
+    font-size: 0.75rem;
+  }
 }
 
+@media screen and (max-width: 992px) {
+  .auth__img {
+    height: 480px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .auth-form-container {
+    width: 18rem;
+    padding: 2rem 2rem;
+    /* font-size: 0.6rem; */
+  }
+
+  .auth__img {
+    width: 350px;
+  }
+
+  .auth-form-container input {
+    width: 12rem;
+  }
+
+  .btn-sign-up,
+  .btn-sign-in {
+    font-weight: 600;
+    font-size: small;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .para-btn {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .auth-form-container {
+    padding: 1rem 1rem;
+    margin: 0rem;
+  }
+
+  .auth__img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .user-img {
+    margin: 0 0rem 0.3rem 0.2rem;
+  }
+}
+
+@media screen and (max-width: 290px) {
+  .auth-form-container {
+    width: 11.5rem;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .auth-form-container input {
+    width: 8rem;
+    font-size: 0.6rem;
+  }
+
+  .firstName-logo,
+  .lastName-logo,
+  .email-logo,
+  .password-logo,
+  .password-logo1 {
+    height: 20px;
+    width: 20px;
+  }
+
+  .user-img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .para-btn {
+    font-size: 0.6rem;
+  }
+}

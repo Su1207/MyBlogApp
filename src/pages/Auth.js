@@ -70,13 +70,17 @@ const Auth = ({ setActive, setUser }) => {
   return (
     <div className="App">
       <div className="auth-image">
-        <img src="assets/images/-signup.gif" alt="Sign Up" />
+        <img
+          className="auth__img"
+          src="assets/images/-signup.gif"
+          alt="Sign Up"
+        />
       </div>
       <div className="auth-form-container">
-        <FaUserCircle className="user-img" size="100px" />
+        <FaUserCircle className="user-img" size="80px" />
         <h2>
           {/* Only add those input option when we are in signIn */}
-          {!signUp ? "Sign-In" : "Sign-Up"}
+          {!signUp ? "Sign In" : "Sign Up"}
         </h2>
         <form className="row" onSubmit={handleAuth}>
           {signUp && (
@@ -149,7 +153,7 @@ const Auth = ({ setActive, setUser }) => {
             type="submit"
             style={{ cursor: "pointer", border: "none" }}
           >
-            {!signUp ? "Sign-in" : "Sign-up"} {/* value */}
+            {!signUp ? "Sign In" : "Sign Up"} {/* value */}
           </button>
         </form>
         <div>

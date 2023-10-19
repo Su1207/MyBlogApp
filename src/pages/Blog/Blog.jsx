@@ -38,11 +38,12 @@ const Blog = () => {
         </div>
       </div>
       <div className="data">
-        {/* <p className="meta-info">
-          By <span className="author">{blog?.author}</span>
+        <p className="meta-info">
+          By <span className="author">{blog?.author}</span> -&nbsp;
+          <span>{blog?.timestamp.toDate().toDateString()}</span>
         </p>
 
-        <hr /> */}
+        <hr />
 
         <p className="text-start">{blog?.description}</p>
       </div>

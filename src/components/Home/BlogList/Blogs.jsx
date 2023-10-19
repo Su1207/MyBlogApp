@@ -13,11 +13,13 @@ const BlogList = ({ user, blogs }) => {
         <div>
           {/* <BlogItem blog={blog} key={blog.id} /> */}
           <div className="blogItem-wrap" key={item.id}>
-            <img
-              src={item.imgUrl}
-              alt={item.title}
-              className="blogItem-cover"
-            />
+            <Link to={`/blog/${item.id}`}>
+              <img
+                src={item.imgUrl}
+                alt={item.title}
+                className="blogItem-cover"
+              />
+            </Link>
             {/*blogCover*/}
             <Chip label={item.category} />
             <h3>{item.title}</h3>

@@ -9,9 +9,10 @@ import { collection, onSnapshot } from "firebase/firestore";
 import Footer from "../../components/Footer/Footer";
 import { db } from "../../fireBase";
 import "./style.css";
+import Spinner from "../../components/spinner/Spinner";
 
 const Home = ({ user, handleLogout }) => {
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
 
   // The onSnapshot function is a Firebase Firestore method that sets up a real-time listener for changes to a collection in the database. It takes three arguments:
@@ -32,6 +33,7 @@ const Home = ({ user, handleLogout }) => {
           //list.push({ id: doc.id, ...doc.data() }):For each document, we create an object with the properties of the document's data (...doc.data()) and add an additional property called "id" with the value of the document ID (doc.id). This way, we construct an array of blog objects with their respective IDs.
         });
         setBlogs(list);
+        setLoading(false);
       },
       (error) => {
         console.log(error);
@@ -85,7 +87,13 @@ const Home = ({ user, handleLogout }) => {
       />
 
       {/*Blog list/ Empty list*/}
-      {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
+      {loading ? (
+        <Spinner />
+      ) : !blogs.length ? (
+        <EmptyList />
+      ) : (
+        <BlogList blogs={blogs} />
+      )}
 
       {/* <div
         className="footer"

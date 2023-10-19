@@ -199,3 +199,9 @@ footer h3 {
     display: inline;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .footer-center {
+    font-size: 0.875rem;
+  }
+}

@@ -15,6 +15,7 @@ import { auth } from "./fireBase";
 import { useNavigate, Navigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import AddEditBlogs from "./pages/AddEditBlogs/AddEditBlogs";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [active, setActive] = useState("Home");
@@ -69,6 +70,8 @@ function App() {
           path="/home"
           element={<Index user={user} handleLogout={handleLogout} />}
         />
+
+        <Route path="/contact" element={<Footer />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
     </div>

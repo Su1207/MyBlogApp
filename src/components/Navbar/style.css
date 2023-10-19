@@ -77,6 +77,23 @@
   color: antiquewhite;
   font-weight: 600;
   cursor: pointer;
+  position: relative;
+}
+
+.uname::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #181818;
+  transition: width 0.3s;
+}
+
+.uname:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .uname:hover {
@@ -113,10 +130,10 @@
   .item:hover {
     color: #0080ff;
   }
-  .navbar nav ul li {
-    padding: 15px;
-    margin-top: 25px;
-  }
+  /* .navbar nav ul li {
+    padding: 5px;
+    margin-top: 5px;
+  } */
   .navbar {
     opacity: 1;
   }

@@ -36,7 +36,9 @@ const Navlinks = ({ user, handleLogout }) => {
           animate={animateTo}
           transition={{ delay: 0.3 }}
         >
-          <Link className="item">Contact</Link>
+          <a className="item" to="#contact">
+            Contact
+          </a>
         </motion.li>
         {/* <motion.li
           initial={animateFrom}

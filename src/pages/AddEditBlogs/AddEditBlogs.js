@@ -14,6 +14,7 @@ import {
   serverTimestamp,
   updateDoc,
 } from "firebase/firestore";
+import BackgroundImageChanger from "../../components/BackgroundImageChanger";
 
 const initialState = {
   title: "",
@@ -149,104 +150,106 @@ const AddEditBlogs = ({ user }) => {
 
   return (
     <div className="homeBlogs">
-      <div className="blogs">
-        <div className="createTitle">
-          <h1>Publish your passion, your way</h1>
-          <p style={{ paddingTop: "10px" }}>
-            Create a unique and beautiful blog easily.
-          </p>
-          <h2 style={{ padding: "20px" }}>Create Blogs</h2>
-        </div>
-        <div className="createBlog">
-          <form className="row blog-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              className="form-control input-text-box"
-              placeholder="Title"
-              name="title"
-              value={title}
-              onChange={handleChange}
-            />
-            <>
-              <ReactTagInput
-                tags={tags}
-                className="reactTagInput"
-                placeholder="Tags"
-                onChange={handleTags}
-              />
-            </>
-            <>
-              <p className="trending">Is It Trending ?</p>
-              <div className="radio-wrapper">
-                <label htmlFor="radioOption" className="trending-yes">
-                  Yes
-                </label>
-                <input
-                  type="radio"
-                  className="form-check-trending-yes"
-                  value="yes"
-                  name="radioOption"
-                  checked={trending === "yes"}
-                  onChange={handleTrending}
-                />
-              </div>
-
-              <div className="radio-wrapper">
-                <label htmlFor="radioOption" className="trending-no">
-                  No
-                </label>
-                <input
-                  type="radio"
-                  className="form-check-trending-no"
-                  value="no"
-                  name="radioOption"
-                  checked={trending === "no"}
-                  onChange={handleTrending}
-                />
-              </div>
-            </>
-            <>
-              <select
-                value={category}
-                onChange={onCategoryChange}
-                className="cate-dropdown"
-              >
-                <option>Please select category</option>
-                {categoryOption.map((option, index) => (
-                  <option value={option || ""} key={index}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </>
-            <>
-              <textarea
-                className="description-box"
-                placeholder="Description"
-                value={description}
-                name="description"
-                onChange={handleChange}
-                cols="30"
-                rows="10"
-              />
-            </>
-            <>
+      <BackgroundImageChanger />
+      <div className="content-container">
+        <div className="blogs">
+          <div className="createTitle">
+            <h1>Publish your passion, your way</h1>
+            <p style={{ paddingTop: "10px" }}>
+              Create a unique and beautiful blog easily.
+            </p>
+            <h2 style={{ padding: "20px" }}>Create Blogs</h2>
+          </div>
+          <div className="createBlog">
+            <form className="row blog-form" onSubmit={handleSubmit}>
               <input
-                type="file"
-                className="form-control"
-                onChange={(e) => setFile(e.target.files[0])}
+                type="text"
+                className="form-control input-text-box"
+                placeholder="Title"
+                name="title"
+                value={title}
+                onChange={handleChange}
               />
-            </>
-            <>
-              <button
-                type="submit"
-                className="submit-button"
-                disabled={progress !== null && progress < 100}
-              >
-                Submit
-              </button>
-            </>
-          </form>
+              <div className="reactTagInput">
+                <ReactTagInput
+                  tags={tags}
+                  placeholder="Tags"
+                  onChange={handleTags}
+                />
+              </div>
+              <>
+                <p className="trending">Is It Trending ?</p>
+                <div className="radio-wrapper">
+                  <label htmlFor="radioOption" className="trending-yes">
+                    Yes
+                  </label>
+                  <input
+                    type="radio"
+                    className="form-check trending-yes"
+                    value="yes"
+                    name="radioOption"
+                    checked={trending === "yes"}
+                    onChange={handleTrending}
+                  />
+                </div>
+
+                <div className="radio-wrapper">
+                  <label htmlFor="radioOption" className="trending-no">
+                    No
+                  </label>
+                  <input
+                    type="radio"
+                    className="form-check trending-no"
+                    value="no"
+                    name="radioOption"
+                    checked={trending === "no"}
+                    onChange={handleTrending}
+                  />
+                </div>
+              </>
+              <>
+                <select
+                  value={category}
+                  onChange={onCategoryChange}
+                  className="cate-dropdown"
+                >
+                  <option>Please select category</option>
+                  {categoryOption.map((option, index) => (
+                    <option value={option || ""} key={index}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </>
+              <>
+                <textarea
+                  className="description-box"
+                  placeholder="Description"
+                  value={description}
+                  name="description"
+                  onChange={handleChange}
+                  cols="30"
+                  rows="10"
+                />
+              </>
+              <>
+                <input
+                  type="file"
+                  className="form-control"
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
+              </>
+              <>
+                <button
+                  type="submit"
+                  className="submit-button"
+                  disabled={progress !== null && progress < 100}
+                >
+                  Submit
+                </button>
+              </>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,26 @@
+/* .homeBlogs {
+  background-image: url("../../../public/assets/images/create-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: 100vh; 
+  background-color: black;
+} */
+
 .homeBlogs {
-  background: rgb(235, 171, 106);
-  height: 100vh;
+  position: relative;
+}
+
+.content-container {
+  position: absolute; /* Set the content container to absolute position */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(255, 255, 255, 0.8); */
 }
 
 .blogs {
@@ -15,49 +35,91 @@
   padding: 8px 16px;
   margin-bottom: 10px;
   border-radius: 6px;
+  width: 20rem;
+  background-color: transparent;
+  border: solid 1px #000000;
+  font-weight: 500;
+  color: #000000;
 }
 
 .reactTagInput {
   border-radius: 6px;
+  width: 20rem;
+  background-color: transparent;
+  color: transparent;
 }
 
 .trending {
   margin-top: 10px;
+  font-weight: 500;
+  padding-right: 10rem;
 }
 
-.radio-wrapper {
+/* .radio-wrapper {
   display: flex;
-  align-items: center;
-  margin: 8px 0;
-  /* justify-content: space-between; */
+  /* align-items: center; */
+/* margin: 8px 0;
+  font-weight: 500; */
+/* justify-content: center; */
+/* } */
+
+/*
+.trending-yes {
+  margin-right: 9vw; /* Add some spacing between label and radio input
 }
 
-.trending-yes {
-  margin-right: 9vw; /* Add some spacing between label and radio input */
-}
 
 .trending-no {
-  margin-right: 137px;
+  margin-right: 7.2rem;
+}
+*/
+
+.radio-wrapper {
+  display: inline-block;
+  margin: 0.3rem 0;
+  font-weight: 500;
+}
+
+.trending {
+  width: max-content;
+}
+
+.trending-no,
+.trending-yes {
+  display: inline-block;
+  margin-right: 4rem;
 }
 
 .cate-dropdown {
+  margin-top: 1rem;
   padding: 8px 16px;
   border-radius: 6px;
+  width: 20rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: transparent;
+  border: solid 1px #000000;
+}
+
+.cate-dropdown option {
+  font-family: "Roboto", sans-serif;
 }
 
 .description-box {
   margin: 10px 0;
   padding: 10px;
-  border: solid 1px #0000003e;
+  border: solid 1px #000000;
+  background-color: transparent;
   font-family: "Roboto", sans-serif;
-  width: 50vw;
+  width: 40rem;
   border-radius: 6px;
   resize: none;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .submit-button {
-  width: fit-content;
-
+  width: 50vw;
   margin: 10px 0px;
   padding: 10px;
   background-color: #009dff;
@@ -70,4 +132,67 @@
 
 .submit-button:hover {
   background-color: #0086d8;
+}
+
+@media screen and (max-width: 650px) {
+  .description-box {
+    width: 35rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .description-box {
+    width: 20rem;
+  }
+
+  .createTitle {
+    /* padding-top: 1.5rem; */
+    font-size: 0.875rem;
+  }
+
+  .createTitle h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .createTitle h1 {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .createTitle {
+    /* padding-top: 1.5rem; */
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .createTitle {
+    /* padding-top: 1.5rem; */
+    font-size: 0.75rem;
+  }
+
+  .form-control,
+  .reactTagInput,
+  .cate-dropdown,
+  .description-box {
+    width: 15rem;
+    font-size: 0.75rem;
+  }
+
+  .form-control {
+    padding: 0.5rem;
+  }
+
+  .trending {
+    padding-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 290px) {
+  .createTitle h1 {
+    padding: 0 0.5rem;
+  }
 }

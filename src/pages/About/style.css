@@ -124,6 +124,9 @@ ul .item1 {
 }
 
 @media screen and (max-width: 576px) {
+  .about_container {
+    margin-bottom: 1rem;
+  }
   .container1 {
     grid-template-columns: 1fr;
     justify-content: center;
@@ -131,7 +134,8 @@ ul .item1 {
   }
 
   .content {
-    padding: 1rem 0.5rem 0 0.5rem;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .img {
@@ -150,7 +154,8 @@ ul .item1 {
   }
 
   .content {
-    padding: 0.5rem 0.5rem 0 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .img {

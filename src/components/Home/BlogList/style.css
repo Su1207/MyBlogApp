@@ -66,12 +66,14 @@
 }
 
 .trash {
+  cursor: pointer;
   margin-right: 3px;
 }
 
 .edit {
   margin-right: 3px;
   padding-top: 1px;
+  cursor: pointer;
 }
 
 .blogItem-link {

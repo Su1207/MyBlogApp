@@ -4,12 +4,13 @@ import BlogList from "../../components/Home/BlogList/Blogs";
 import Header from "../../components/Home/Header/Header";
 import SearchBar from "../../components/Home/SearchBar/Search";
 import { blogList } from "../../config/data";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 // import { FaRegGem } from "react-icons/fa";
 import Footer from "../../components/Footer/Footer";
 import { db } from "../../fireBase";
 import "./style.css";
 import Spinner from "../../components/spinner/Spinner";
+import { toast } from "react-toastify";
 
 const Home = ({ user, handleLogout }) => {
   const [loading, setLoading] = useState(true);
@@ -45,7 +46,18 @@ const Home = ({ user, handleLogout }) => {
     };
   }, []);
 
-  console.log("blogs", blogs);
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure want to delete this blog?")) {
+      try {
+        setLoading(true);
+        await deleteDoc(doc(db, "blogs", id));
+        toast.success("Blog deleted successfully");
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
 
   // const [blogs, setBlogs] = useState(blogList);
   const [searchKey, setSearchKey] = useState("");
@@ -92,7 +104,7 @@ const Home = ({ user, handleLogout }) => {
       ) : !blogs.length ? (
         <EmptyList />
       ) : (
-        <BlogList blogs={blogs} />
+        <BlogList blogs={blogs} handleDelete={handleDelete} user={user} />
       )}
 
       {/* <div

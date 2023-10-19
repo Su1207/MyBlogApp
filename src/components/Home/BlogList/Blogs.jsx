@@ -6,13 +6,15 @@ import { BiEdit } from "react-icons/bi";
 import Chip from "../../Common/Chip/Chip";
 import "./style.css";
 
-const BlogList = ({ user, blogs }) => {
+const BlogList = ({ user, blogs, handleDelete }) => {
+  const userId = user?.uid;
+
   return (
     <div className="blogList-wrap">
       {blogs?.map((item) => (
-        <div>
+        <div key={item.id}>
           {/* <BlogItem blog={blog} key={blog.id} /> */}
-          <div className="blogItem-wrap" key={item.id}>
+          <div className="blogItem-wrap">
             <Link to={`/blog/${item.id}`}>
               <img
                 src={item.imgUrl}
@@ -33,13 +35,18 @@ const BlogList = ({ user, blogs }) => {
                 </div>
               </div>
               <div className="icons">
-                <BsTrashFill
-                  className="trash"
-                  size="17px"
-                  // onClick={() => handleDelete(id)}
-                />
-                {/* <Link to={`/update/${id}`}> */}
-                <BiEdit className="edit" size="19px" />
+                {userId && userId === item.userId && (
+                  <>
+                    <BsTrashFill
+                      className="trash"
+                      size="17px"
+                      onClick={() => handleDelete(item.id)}
+                    />
+                    {/* <Link to={`/update/${id}`}> */}
+                    <BiEdit className="edit" size="19px" />
+                  </>
+                )}
+
                 <Link className="blogItem-link" to={`/blog/${item.id}`}>
                   ➝
                 </Link>
